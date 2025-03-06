@@ -3,12 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { TextcomponentComponent } from './textcomponent/textcomponent.component';
 import { ImagecomponentComponent } from './imagecomponent/imagecomponent.component';
 import { EmpInfoComponent } from "./emp-info/emp-info.component";
-import { FormComponent } from "./form/form.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TextcomponentComponent, ImagecomponentComponent, EmpInfoComponent, FormComponent],
+  imports: [RouterOutlet, TextcomponentComponent, ImagecomponentComponent, EmpInfoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

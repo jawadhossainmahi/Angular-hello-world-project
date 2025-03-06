@@ -1,4 +1,23 @@
-<button type="button" name="button" (click)='getInfoFromServiceClass1()'>Emp1</button>
-<ul class="list-group">
-    <li class="list-group-item">{{infoRecive1}}</li>
-</ul>
+<div class="container">
+    <button (click)="getRecords(10)">Get Data</button>
+    <input type="number" class="form-control form-sm" [(ngModel)]="limit" (change)="getRecords(limit)" />
+    <div class="table-responsive">
+        <table class="table table-primary table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Body</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let record of records.posts">
+                    <td>{{record.id}}</td>
+                    <td>{{record.title}}</td>
+                    <td>{{record.body}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

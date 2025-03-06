@@ -1,30 +1,33 @@
 import { Component } from '@angular/core';
 import { RecordsService } from '../services/records.service';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-emp-info',
   standalone: true,
-  imports: [],
+  imports: [ FormsModule, CommonModule],
   templateUrl: './emp-info.component.html',
   styleUrl: './emp-info.component.css',
   providers: [RecordsService]
 })
 export class EmpInfoComponent {
-
-  infoRecive1: string[] = [];
-  infoRecive2: string[] = [];
-  infoRecive3: string[] = [];
-
-  constructor(private ourservice: RecordsService) { }
-
-  getInfoFromServiceClass1() {
-    this.infoRecive1 = this.ourservice.getInfo1();
+  records: { posts: any[] } = { posts: [] };
+  limit: number = 10;
+  constructor(private http: HttpClient) {
   }
-  getInfoFromServiceClass2() {
-    this.infoRecive2 = this.ourservice.getInfo2();
+
+  ngOnInit() {
+    this.getRecords();
   }
-  getInfoFromServiceClass3() {
-    this.infoRecive3 = this.ourservice.getInfo3();
+
+
+
+  getRecords(limit: number=10) {
+    this.http.get(`https://dummyjson.com/posts?limit=${limit}`).subscribe((data: any) => {
+      this.records = data;
+    });
   }
 
 }
