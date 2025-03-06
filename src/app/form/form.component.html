@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>User Registration</h1>
+    
+    <form #login="ngForm" (ngSubmit)="submit(login)">
+        <div class="mb-3">
+            <label for="firstname" class="form-label">First name</label>
+            <input
+                type="text"
+                class="form-control"
+                name="firstname"
+                id="firstname"
+                aria-describedby="helpId"
+                placeholder="Enter your name"
+            />
+            <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input
+                type="text"
+                class="form-control"
+                name="lastname"
+                id="lastname"
+                aria-describedby="helpId"
+                placeholder="Enter your last name"
+            />
+            <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">email</label>
+            <input
+                type="text"
+                class="form-control"
+                name="email"
+                id="email"
+                aria-describedby="helpId"
+                placeholder="Enter your name"
+            />
+            <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+                type="text"
+                class="form-control"
+                name="password"
+                id="password"
+                aria-describedby="helpId"
+                placeholder="Enter your name"
+            />
+            <small id="helpId" class="form-text text-muted">Help text</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+</div>
